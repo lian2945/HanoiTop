@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanoi Top</title>
+    <link href="style/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <header><h2>Drag & Drop Hanoi Tower</h2></header>
+    <nav><button id="addDisk" onclick="addDisk()">Add Disk</button><button id="reset" onclick="reset()">Reset</button></nav>
+    <main>
+        <section id="Movement">
+            <p>
+                <span>Move : </span>
+                <span id="moveCount"></span>
+            </p>
+        </section>
+        <section class="ground">
+            <div id="towerA" class="tower"></div>
+            <div id="towerB" class="tower"></div>
+            <div id="towerC" class="tower"></div>
+            <div id="msgSuccess" class="Success">Congraturlation</div>
+        </section>
+    </main>
+    <footer>Turing Lab</footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
