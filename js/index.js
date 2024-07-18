@@ -39,11 +39,17 @@ function reset()
 
 function dragStart(e)
 {
-    e.dataTransfer.setData('text/plain', this.id);
-    this.classList.add("dragging");
-    setTimeout(() => {
-        this.style.display='none';
-    }, 0);
+    const towers = document.getElementsByClassName("tower");
+    Array.from(towers).forEach((el) => {
+        if (el.lastElementChild.id===this.id)
+        {
+            e.dataTransfer.setData('text/plain', this.id);
+            this.classList.add("dragging");
+            setTimeout(() => {
+                this.style.display='none';
+            }, 0);
+        }
+    });
 }
 
 function dragEnd(e)
@@ -70,8 +76,8 @@ function towerReset()
 {
     const towers=document.querySelectorAll('.tower');
 
-    towers.forEach((tower) => {
-        tower.forEach((disc) => {
+    Array.from(towers).forEach((tower) => {
+        Array.from(tower).forEach((disc) => {
             disc.setAttribute('draggable', 'false');
         });
 
